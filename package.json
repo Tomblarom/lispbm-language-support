@@ -3,7 +3,7 @@
   "displayName": "lispBM language support",
   "description": "Adds support for the lispBM language. Don't put to much faith into this project.",
   "publisher": "rasmus-soderhielm",
-  "version": "0.3.7",
+  "version": "0.4.0",
   "engines": {
     "vscode": "^1.76.0"
   },
@@ -36,10 +36,31 @@
         "scopeName": "source.lispbm",
         "path": "./syntaxes/lispbm.tmLanguage.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "lispBM",
+      "properties": {
+        "lispbm.format.stackClosingBrackets": {
+          "type": "boolean",
+          "default": true,
+          "description": "Stack closing brackets on the same line as preceding code."
+        }
+      }
+    }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/laxsjo/lispbm-language-support.git"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:lispbm"
+  ],
+  "scripts": {
+    "prepackage": "node -e \"require('fs').mkdirSync('dist', { recursive: true });\"",
+    "package": "node ./scripts/package-extension.js"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.0.0"
   }
 }
