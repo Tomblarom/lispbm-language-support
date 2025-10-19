@@ -55,12 +55,5 @@
   "main": "./extension.js",
   "activationEvents": [
     "onLanguage:lispbm"
-  ],
-  "scripts": {
-    "prepackage": "node -e \"require('fs').mkdirSync('dist', { recursive: true });\"",
-    "package": "node ./scripts/package-extension.js"
-  },
-  "devDependencies": {
-    "@vscode/vsce": "^3.0.0"
-  }
+  ]
 }
