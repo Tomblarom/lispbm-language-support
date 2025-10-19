@@ -105,3 +105,10 @@ All notable changes to the "lispbm-language-support" extension will be documente
 ### 0.3.7
 
 - Add support for `defmacro`.
+
+### Unreleased
+
+- Add a built-in document formatter for `lispbm` files that indents with four
+  spaces and ensures curly brace blocks have at least eight spaces of indent.
+- Introduce the `lispbm.format.stackClosingBrackets` setting to control whether
+  closing brackets remain stacked on the final line of an expression.

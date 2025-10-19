@@ -36,10 +36,24 @@
         "scopeName": "source.lispbm",
         "path": "./syntaxes/lispbm.tmLanguage.json"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "lispBM",
+      "properties": {
+        "lispbm.format.stackClosingBrackets": {
+          "type": "boolean",
+          "default": true,
+          "description": "Stack closing brackets on the same line as preceding code."
+        }
+      }
+    }
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/laxsjo/lispbm-language-support.git"
-  }
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:lispbm"
+  ]
 }
