@@ -17,6 +17,12 @@ This extension adds the new language `LispBM`.
 The primary feature are the provided Textmate grammar definitions.
 This means that basic syntax highlighting is supported (no [semantic highlighting](https://code.visualstudio.com/api/language-extensions/semantic-highlight-guide)!).
 
+In addition to highlighting, the extension registers a document formatter so the
+standard **Format Document** command in VS Code will tidy the indentation of
+`lispbm` files. The formatter uses four space indentation and indents the
+contents of curly brace blocks with eight spaces at minimum, matching the
+example style from the lispBM documentation.
+
 Bracket definitions are also provided.
 
 Custom folding ranges can be specified using comments. Start the range with a
@@ -40,16 +46,11 @@ This extension has no requirements, just install and enjoy! :)
 
 ## Extension Settings
 
-There are no settings for this extension.
+This extension contributes the following formatter setting:
 
-<!-- Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something. -->
+* `lispbm.format.stackClosingBrackets`: When enabled (default), keeps multiple
+  closing brackets stacked on the last line of an expression. Disable it to
+  place each trailing closing bracket on its own line.
 
 ## Known Issues
 
